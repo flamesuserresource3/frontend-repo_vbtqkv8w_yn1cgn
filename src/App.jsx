@@ -24,17 +24,18 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-neutral-900">
       {/* Sticky Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur">
+      <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-          <a href="#home" className="text-base font-semibold">
+          <a href="#home" className="text-base font-semibold text-red-700">
             ACCMAN PGDM
           </a>
-          <nav className="hidden gap-6 text-sm text-white/80 sm:flex">
-            <a href="#why" className="hover:text-white">Why PGDM</a>
-            <a href="#spec" className="hover:text-white">Specializations</a>
-            <a href="#learn" className="hover:text-white">Curriculum & Admissions</a>
+          <nav className="hidden gap-6 text-sm text-neutral-700 sm:flex">
+            <a href="#why" className="hover:text-red-700">Why PGDM</a>
+            <a href="#spec" className="hover:text-red-700">Specializations</a>
+            <a href="#experience" className="hover:text-red-700">Program Experience</a>
+            <a href="#learn" className="hover:text-red-700">Admissions</a>
           </nav>
         </div>
       </header>
@@ -48,11 +49,11 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#0b0b0b] py-10 text-white/70">
+      <footer className="border-t border-neutral-200 bg-white py-10 text-neutral-600">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
           <p className="text-sm">© {new Date().getFullYear()} ACCMAN Institute of Management. All rights reserved.</p>
           <div className="flex items-center gap-4 text-xs">
-            <a href="#home" className="hover:text-white">Back to top</a>
+            <a href="#home" className="hover:text-red-700">Back to top</a>
           </div>
         </div>
       </footer>

@@ -41,7 +41,7 @@ function StackedCard({ title, icon: Icon, img, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.06 }}
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0b] shadow-2xl"
+      className="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm"
     >
       <div className="relative h-60 w-full overflow-hidden sm:h-64">
         <img
@@ -50,16 +50,16 @@ function StackedCard({ title, icon: Icon, img, index }) {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-red-600/20 blur-2xl" />
+          <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-red-200/60 blur-2xl" />
         </div>
-        <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/50 px-3 py-1 text-xs text-white/80 backdrop-blur">
-          <Icon className="h-4 w-4 text-rose-300" /> {title}
+        <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs text-neutral-800 backdrop-blur">
+          <Icon className="h-4 w-4 text-red-600" /> {title}
         </div>
       </div>
       <div className="p-5">
-        <p className="text-sm text-white/70">
+        <p className="text-sm text-neutral-700">
           Dive deep into {title} with projects, tools, and mentorship tailored for high‑impact careers.
         </p>
       </div>
@@ -69,9 +69,9 @@ function StackedCard({ title, icon: Icon, img, index }) {
 
 export default function Specializations() {
   return (
-    <section id="spec" className="relative w-full bg-black py-20 text-white">
+    <section id="spec" className="relative w-full bg-white py-20 text-neutral-900">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-10 h-56 w-56 -translate-x-1/2 rounded-full bg-rose-600/20 blur-3xl" />
+        <div className="absolute left-1/2 top-10 h-56 w-56 -translate-x-1/2 rounded-full bg-rose-200/60 blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-7xl px-6">
         <motion.h2
@@ -79,7 +79,7 @@ export default function Specializations() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-3xl font-semibold md:text-4xl"
+          className="text-center text-3xl font-semibold md:text-4xl text-red-700"
         >
           Specializations Offered
         </motion.h2>
@@ -88,7 +88,7 @@ export default function Specializations() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="mx-auto mt-3 max-w-2xl text-center text-white/70"
+          className="mx-auto mt-3 max-w-2xl text-center text-neutral-700"
         >
           Choose a track and stack your skills with real‑world tools and capstone projects.
         </motion.p>
