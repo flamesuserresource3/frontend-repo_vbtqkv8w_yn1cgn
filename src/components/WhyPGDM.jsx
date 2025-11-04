@@ -1,53 +1,62 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Briefcase, GraduationCap, Users, Sparkles } from 'lucide-react';
+import { CheckCircle2, Users, Sparkles, Briefcase, Globe, Cpu } from 'lucide-react';
 
-const benefits = [
-  { what: 'Industry-Integrated Curriculum', how: 'Learn exactly what corporates expect today', icon: GraduationCap },
-  { what: 'Case Studies & Live Projects', how: 'Real problem-solving exposure before placement', icon: Briefcase },
-  { what: 'Three-Way Mentorship Model', how: 'Guidance from Faculty + Alumni + Industry Leaders', icon: Users },
-  { what: 'AI & Analytics-Enabled Learning', how: 'Gain skills for new-age, digital business environments', icon: Check },
-  { what: 'Global Certifications', how: 'Boost your job readiness & professional profile', icon: Check },
-  { what: 'Corporate Networking & Conclaves', how: 'Direct connect with hiring managers, leaders & domain experts', icon: Briefcase },
-  { what: 'Career & Placement Support', how: 'Tailored job-prep, internships & role mapping', icon: Users },
+const highlights = [
+  { title: 'AI-enabled, industry-integrated curriculum', icon: Cpu },
+  { title: 'Global certifications & value-added courses', icon: Globe },
+  { title: 'Case-based, experiential pedagogy', icon: Sparkles },
+  { title: 'Corporate immersion & live consulting projects', icon: Briefcase },
+  { title: 'Mentorship: faculty, alumni, and industry leaders', icon: Users },
+  { title: 'Cross-functional analytics exposure', icon: CheckCircle2 },
+  { title: 'Focus on ethics, empathy, and holistic leadership', icon: CheckCircle2 },
 ];
 
 export default function WhyPGDM() {
   return (
-    <section className="relative border-t border-gray-100 bg-white">
-      <div className="absolute inset-x-0 -top-20 h-40 bg-gradient-to-b from-indigo-50/70 to-transparent" aria-hidden />
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-        <div className="mb-10 flex items-center justify-between gap-6">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">Why Study PGDM at ACCMAN?</h2>
-            <p className="mt-3 text-gray-600">We combine academic rigor with practical industry application.</p>
-          </div>
-          <div className="hidden rounded-xl bg-indigo-50 px-3 py-2 text-sm text-indigo-700 ring-1 ring-indigo-100 md:block">
-            <Sparkles className="mr-1 inline h-4 w-4" /> Outcome-focused learning
-          </div>
-        </div>
+    <section id="why" className="relative w-full bg-[#0b0b0b] py-20 text-white">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-red-600/20 blur-3xl" />
+        <div className="absolute right-0 top-10 h-40 w-40 rounded-full bg-rose-500/20 blur-2xl" />
+      </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {benefits.map(({ what, how, icon: Icon }, idx) => (
-            <motion.div
-              key={what}
-              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+      <div className="relative mx-auto max-w-7xl px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center text-3xl font-semibold md:text-4xl"
+        >
+          Key Differentiators
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="mx-auto mt-3 max-w-2xl text-center text-white/70"
+        >
+          A program built for the era of AI — rigorous, experiential, and globally connected.
+        </motion.p>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {highlights.map(({ title, icon: Icon }, idx) => (
+            <motion.article
+              key={title}
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.45, delay: idx * 0.05, ease: 'easeOut' }}
-              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: idx * 0.05 }}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[.06] to-white/[.03] p-5 shadow-xl backdrop-blur hover:shadow-rose-900/20"
             >
-              <div className="absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-10 rotate-12 rounded-full bg-indigo-500/5 blur-xl transition group-hover:opacity-100" aria-hidden />
+              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-red-600/10 blur-2xl transition-all duration-300 group-hover:scale-110" />
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                <div className="grid h-11 w-11 place-content-center rounded-xl bg-red-600/20 text-red-400 ring-1 ring-red-600/30">
                   <Icon className="h-5 w-5" />
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900">{what}</p>
-                  <p className="mt-1 text-sm text-gray-600">{how}</p>
-                </div>
+                <h3 className="text-base font-medium leading-snug text-white md:text-lg">{title}</h3>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
